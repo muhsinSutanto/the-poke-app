@@ -4,6 +4,7 @@ import { Card, Col, Row, Skeleton, Typography, Avatar } from "antd";
 import Layout from "../template/Layout";
 import { Link } from "react-router-dom";
 import { fetchPokemonList } from "../store/actions/pokeAction";
+import { imageUrl } from "../helpers/utils";
 
 const Home = () => {
    const { Text, Title } = Typography;
@@ -36,7 +37,7 @@ const Home = () => {
                                  <Avatar
                                     style={{ backgroundColor: "#fde3cf" }}
                                     size={50}
-                                    // src={imageUrl(pokemon)}
+                                    src={imageUrl(pokemon)}
                                  />
                               </Col>
                               <Col>
