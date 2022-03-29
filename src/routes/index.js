@@ -4,7 +4,7 @@ const ROUTES = [
    {
       path: "/",
       exact: true,
-      element: () => <Home />,
+      element: <Home />,
    },
 ];
 

@@ -4,15 +4,13 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Home from "./pages/Home";
 
 function App() {
-   //  const routePages = ROUTES.map((detail, idx) => (
-   //     <Route exact={detail.exact} path={detail.path} element={detail.element} key={idx} />
-   //  ));
+   const routePages = ROUTES.map((detail, idx) => (
+      <Route path={detail.path} element={detail.element} key={idx} />
+   ));
 
    return (
       <BrowserRouter>
-         <Routes>
-            <Route path="/" element={<Home />} />
-         </Routes>
+         <Routes>{routePages}</Routes>
       </BrowserRouter>
    );
 }
