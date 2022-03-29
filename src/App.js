@@ -1,34 +1,19 @@
-import logo from "./logo.svg";
-import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
-import { useEffect } from "react";
-import { fetchPokemonList } from "./store/actions/pokeAction";
+import ROUTES from "./routes";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
-   const dispatch = useDispatch();
-   const pokemonList = useSelector((state) => state);
-   useEffect(() => {
-      dispatch(fetchPokemonList());
-   }, []);
+   //  const routePages = ROUTES.map((detail, idx) => (
+   //     <Route exact={detail.exact} path={detail.path} element={detail.element} key={idx} />
+   //  ));
 
-   console.log("list", pokemonList);
    return (
-      <div className="App">
-         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-               Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-               className="App-link"
-               href="https://reactjs.org"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               Learn React
-            </a>
-         </header>
-      </div>
+      <BrowserRouter>
+         <Routes>
+            <Route path="/" element={<Home />} />
+         </Routes>
+      </BrowserRouter>
    );
 }
 
