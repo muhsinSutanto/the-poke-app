@@ -1,5 +1,6 @@
 import Home from "../pages/Home";
 import PokemonDetail from "../pages/PokemonDetail";
+import MyPokemon from "../pages/MyPokemon";
 
 const ROUTES = [
    {
@@ -11,6 +12,11 @@ const ROUTES = [
       path: "/pokemon/:id",
       exact: true,
       element: <PokemonDetail />,
+   },
+   {
+      path: "/my-pokemon",
+      exact: true,
+      element: <MyPokemon />,
    },
 ];
 

@@ -22,7 +22,7 @@ const Navbar = () => {
                Pokemon Bank <Link to="/" />
             </Menu.Item>
             <Menu.Item key="2">
-               My Pokemon <Link to="/my-pokemon" />
+               Cage <Link to="/my-pokemon" />
             </Menu.Item>
          </Menu>
       </Header>
