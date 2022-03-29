@@ -15,4 +15,28 @@ const fetchPokemonList = () => (dispatch) => {
       .catch((err) => console.log("err", err));
 };
 
-export { fetchPokemonList };
+const fetchPokemonDetail = (id) => (dispatch) => {
+   axios
+      .get(`${ENV.BASE_URL}pokemon/${id}`)
+      .then((res) => {
+         dispatch({
+            type: TYPES.GET_POKEMON_DETAIL,
+            payload: res.data,
+         });
+      })
+      .catch((err) => console.log(err));
+};
+
+const setToCage = (data) => (dispatch) => {
+   let local = localStorage.getItem("test");
+   let exisData = local === null ? [] : JSON.parse(local);
+   let newData = exisData.concat(data);
+   localStorage.setItem("test", JSON.stringify(newData));
+
+   dispatch({
+      type: TYPES.GET_POKEMON_LIST,
+      payload: newData,
+   });
+};
+
+export { fetchPokemonList, fetchPokemonDetail, setToCage };
